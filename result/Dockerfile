@@ -1,4 +1,4 @@
-FROM 16.20.2-alpine
+FROM 16-slim
 
 # add curl for healthcheck
 RUN apt-get update \
