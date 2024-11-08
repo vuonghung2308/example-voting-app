@@ -31,7 +31,8 @@ async.retry(
   {times: 1000, interval: 1000},
   function(callback) {
     console.error("Connecting to db");
-    pool.connect(function(err, client, done) {
+    pool.connect(function(err, client, done) {   
+    console.error("Status: ", JSON.stringify({err, client, done}));
       if (err) {
         console.error("Waiting for db");
       }
@@ -39,6 +40,7 @@ async.retry(
     });
   },
   function(err, client) {
+    console.error("Status: ", JSON.stringify({err, client}));
     if (err) {
       return console.error("Giving up");
     }
