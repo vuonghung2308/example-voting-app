@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM 16.20.2-alpine
 
 # add curl for healthcheck
 RUN apt-get update \
